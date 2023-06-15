@@ -1,1 +1,39 @@
-<p>register works!</p>
+<mat-card>
+  <mat-card-header>
+    <h2>Cadastro do Usuário</h2>
+  </mat-card-header>
+  <mat-card-content>
+    <form
+      class="example-form"
+      [formGroup]="registerForm"
+      (ngSubmit)="registration()"
+    >
+      <mat-form-field class="example-full-width">
+        <mat-label>Nome</mat-label>
+        <input matInput placeholder="Deyse Beatriz" forControlName="name" />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="fulano@gmail.com" forControlName="email" />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Senha</mat-label>
+        <input matInput placeholder="********" forControlName="password" />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Celular</mat-label>
+        <span matPrefix>+55 &nbsp;</span>
+        <input type="tel" matInput placeholder="(XX) X XXXX-XXXX" />
+        <mat-icon matSuffix>mode_edit</mat-icon>
+      </mat-form-field>
+
+      <div>
+        <button mat-raised-button color="primary">Enviar</button>
+        <a routerLink="/login" mat-raised-button color="accent">Fazer Login</a>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
