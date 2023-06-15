@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-register',
@@ -8,7 +9,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class RegisterComponent {
 
-  constructor(private builder:FormBuilder){
+  constructor(private builder:FormBuilder, private toastr:ToastrService){
 
   }
 registerForm= this.builder.group({
@@ -20,6 +21,14 @@ registerForm= this.builder.group({
   role:this.builder.control(''),
   isActive:this.builder.control(false)
 })
+
+registration(){
+  if(this.registerForm.valid){
+
+  }else{
+    this.toastr.warning('Por favor, insira dados válidos"')
+  }
+}
 
 }
 
