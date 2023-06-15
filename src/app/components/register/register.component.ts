@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -9,7 +11,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class RegisterComponent {
 
-  constructor(private builder:FormBuilder, private toastr:ToastrService){
+  constructor(private builder:FormBuilder, private toastr:ToastrService, private service:AuthService, private router:Router){
 
   }
 registerForm= this.builder.group({
@@ -24,7 +26,10 @@ registerForm= this.builder.group({
 
 registration(){
   if(this.registerForm.valid){
-
+    this.service.registerData(this.registerForm.value).subscribe((res=>{
+      this.toastr.success('Por favor, entre em contato com um Administrador para habilitar seu acesso', 'Registro realizado com sucesso' );
+      this.router.navigate(['login'])
+    }))
   }else{
     this.toastr.warning('Por favor, insira dados válidos"')
   }
