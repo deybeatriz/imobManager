@@ -6,14 +6,26 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-import { MaterialModule } from './material.module';
+import { MaterialModule } from '../material.module';
 
 import { ToastrModule } from 'ngx-toastr';
 
 import { AppComponent } from './app.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { HomeComponent } from './components/home/home.component';
+import { UserlistingComponent } from './components/userlisting/userlisting.component';
+import { UpdatePopupComponent } from './components/update-popup/update-popup.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    RegisterComponent,
+    HomeComponent,
+    UserlistingComponent,
+    UpdatePopupComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -21,9 +33,9 @@ import { AppComponent } from './app.component';
     MaterialModule,
     ReactiveFormsModule,
     HttpClientModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
