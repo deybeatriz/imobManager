@@ -1,0 +1,32 @@
+.bodyRegister {
+  display: flex;
+  height: 100vh;
+}
+
+.background {
+  flex: 1;
+  background-color: black;
+  transition: 1s;
+  background-image: url("../../../assets/prediosRegister.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+strong {
+  text-decoration: underline;
+}
+
+@keyframes right {
+    0% {
+      opacity: 0;
+      width: 0;
+    }
+  
+    100% {
+      opacity: 1;
+      padding: 20px 40px;
+      width: 600px;
+    }
+  }
+  
