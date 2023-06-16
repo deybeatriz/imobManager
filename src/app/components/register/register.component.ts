@@ -58,7 +58,7 @@ export class RegisterComponent {
         this.router.navigate(['login']);
       });
     } else {
-      this.toastr.warning('Por favor, insira dados válidos"');
-    }
+      this.toastr.warning('Por favor, insira dados válidos');
+    }    
   }
 }

@@ -1,1 +1,45 @@
-<p>login works!</p>
+<mat-card>
+    <mat-card-header>
+      <h2>Login do Usuário</h2>
+    </mat-card-header>
+    <mat-card-content>
+      <form
+        class="example-form"
+        [formGroup]="loginForm"
+        (ngSubmit)="login()"
+      >  
+        <mat-form-field class="example-full-width">
+          <mat-label>Email</mat-label>
+          <input
+            matInput
+            placeholder="fulano@gmail.com"
+            formControlName="email"
+          />
+          <mat-error *ngIf="loginForm.get('email')?.hasError('required')">
+            O email é obrigatório.
+          </mat-error>
+          <mat-error *ngIf="loginForm.get('email')?.hasError('email')">
+            Insira um email válido.
+          </mat-error>
+        </mat-form-field>
+  
+        <mat-form-field class="example-full-width">
+          <mat-label>Senha</mat-label>
+          <input matInput placeholder="********" formControlName="password" />
+          <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
+            A senha é obrigatória.
+          </mat-error>
+          <mat-error *ngIf="loginForm.get('password')?.hasError('pattern')">
+            A senha deve ter pelo menos 8 caracteres, incluindo letras maiúsculas,
+            letras minúsculas, números e caracteres especiais.
+          </mat-error>
+        </mat-form-field>
+  
+        <div>
+          <button mat-raised-button color="primary">Enviar</button>
+          <a routerLink="/login" mat-raised-button color="accent">Fazer Login</a>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+  
