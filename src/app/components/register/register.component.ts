@@ -50,8 +50,8 @@ export class RegisterComponent {
 
   registration() {
     if (this.registerForm.valid) {
-      this.service.registerData(this.registerForm.value).subscribe((res) => {
-        this.toastr.success(
+      this.service.registerData(this.registerForm.value).subscribe(
+        (res) => { this.toastr.success(
           'Por favor, entre em contato com um Administrador para habilitar seu acesso',
           'Registro realizado com sucesso'
         );
