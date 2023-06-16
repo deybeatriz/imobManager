@@ -1,0 +1,22 @@
+.bodyLogin {
+  display: flex;
+  height: 100vh;
+}
+
+.background {
+  flex: 1;
+  background-color: black;
+  transition: 1s;
+  background-image: url("../../../assets/arranha-ceus.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+mat-card-header {
+    display: block;
+  }
+  
+strong {
+    text-decoration: underline ;
+}

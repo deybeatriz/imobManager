@@ -1,45 +1,56 @@
-<mat-card>
+<div class="bodyLogin">
+  <div class="background"></div>
+
+  <mat-card class="cardLogin">
+    
     <mat-card-header>
-      <h2>Login do Usuário</h2>
+      <h2>Seja bem vindo(a) novamente!</h2>
+      <h3 class="animation">Entre em sua conta usando seu email e senha</h3>
     </mat-card-header>
+
     <mat-card-content>
-      <form
-        class="example-form"
-        [formGroup]="loginForm"
-        (ngSubmit)="login()"
-      >  
-        <mat-form-field class="example-full-width">
+      <form [formGroup]="loginForm" (ngSubmit)="login()">
+
+        <mat-form-field class="cardLogin-item">
           <mat-label>Email</mat-label>
           <input
+            class="animation"
             matInput
-            placeholder="fulano@gmail.com"
-            formControlName="email"
-          />
+            placeholder="contato@imobmanager"
+            formControlName="email"/>
+
           <mat-error *ngIf="loginForm.get('email')?.hasError('required')">
             O email é obrigatório.
           </mat-error>
+
           <mat-error *ngIf="loginForm.get('email')?.hasError('email')">
             Insira um email válido.
           </mat-error>
         </mat-form-field>
-  
-        <mat-form-field class="example-full-width">
+
+        <mat-form-field class="cardLogin-item">
           <mat-label>Senha</mat-label>
-          <input matInput placeholder="********" formControlName="password" />
+          <input
+            class="animation a4"
+            matInput
+            placeholder="********"
+            formControlName="password"
+
+          />
           <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
             A senha é obrigatória.
           </mat-error>
           <mat-error *ngIf="loginForm.get('password')?.hasError('pattern')">
-            A senha deve ter pelo menos 8 caracteres, incluindo letras maiúsculas,
-            letras minúsculas, números e caracteres especiais.
+            A senha deve ter pelo menos 8 caracteres, incluindo letras
+            maiúsculas, letras minúsculas, números e caracteres especiais.
           </mat-error>
         </mat-form-field>
-  
-        <div>
-          <button mat-raised-button color="primary">Enviar</button>
-          <a routerLink="/register" mat-raised-button color="accent">Fazer Cadastro</a>
+
+        <div class="buttonsForm">
+          <button class="animation">Enviar</button>
+          <a class="animation" routerLink="/register">Não tem uma conta? <strong>Cadastre-se</strong></a>
         </div>
       </form>
     </mat-card-content>
   </mat-card>
-  
+</div>
