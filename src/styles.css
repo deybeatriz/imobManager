@@ -1,4 +1,120 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+/* style para forms */
+
+mat-card {
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+
+  animation-name: slide;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-delay: 1s;
+}
+
+mat-card-header h2 {
+  margin: 0;
+  color: #045992;
+}
+
+mat-card-header h3 {
+  font-weight: normal;
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+mat-card-content {
+  max-width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+input {
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  outline: 0;
+  transition: 0.2s;
+  margin-top: 20px;
+  padding: 0px;
+}
+
+input:focus {
+  border-color: #0f7ef1;
+}
+
+.mat-mdc-text-field-wrapper:not(.mdc-text-field--outlined) .mat-mdc-form-field-infix {
+  padding: 0px;
+}
+
+.buttonsForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.buttonsForm button {
+  padding: 12px 10px;
+  border: 0;
+  background: #045992;
+  border-radius: 3px;
+  margin-top: 10px;
+  color: #fff;
+  letter-spacing: 1px;
+  font-family: "Rubik", sans-serif;
+}
+
+.buttonsForm a {
+  color: #000;
+  font-size: 14px;
+  margin-top: 6px;
+  text-decoration: none;
+}
+
+.animation {
+  animation-name: move;
+  animation-duration: 0.4s;
+  animation-fill-mode: both;
+  animation-delay: 2.5s;
+}
+
+@keyframes move {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-40px);
+  }
+
+  100% {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide {
+  0% {
+    opacity: 0;
+    width: 0;
+  }
+
+  100% {
+    opacity: 1;
+    padding: 20px 30px;
+    width: 500px;
+  }
+}
