@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/service/auth.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css'],
+  styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
   constructor(
@@ -19,34 +19,41 @@ export class RegisterComponent {
   registerForm = this.builder.group({
     id: this.builder.control(
       '',
-      Validators.compose([Validators.required, Validators.minLength(5)])
-    ),
-    name: this.builder.control('', Validators.required),
+      Validators.compose([Validators.required, Validators.minLength(5)])),
+      
+    name: this.builder.control(
+      '', 
+      Validators.required),
+
     password: this.builder.control(
       '',
       Validators.compose([
-        Validators.required,
-        Validators.pattern(
-          '(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$'
+      Validators.required,
+      Validators.pattern(
+        '(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$'
         ),
       ])
     ),
+
     email: this.builder.control(
       '',
       Validators.compose([
-        Validators.required, 
-        Validators.email])
+      Validators.required, 
+      Validators.email])
     ),
+
     tel: this.builder.control(
       '',
       Validators.compose([
-        Validators.required,
-        Validators.pattern(
+      Validators.required,
+      Validators.pattern(
           '/^(?d{2})?[-.s]?d{4,5}[-.s]?d{4}$/'
           )
         ])
     ),
+
     role: this.builder.control(''),
+    
     isActive: this.builder.control(false),
   });
 
