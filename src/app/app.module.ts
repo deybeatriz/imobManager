@@ -16,7 +16,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { UserlistingComponent } from './components/userlisting/userlisting.component';
 import { UpdatePopupComponent } from './components/update-popup/update-popup.component';
-import { MenuSidebarComponent } from './component/menu-sidebar/menu-sidebar.component';
+import { MenuSidebarComponent } from './components/menu-sidebar/menu-sidebar.component';
 
 @NgModule({
   declarations: [
